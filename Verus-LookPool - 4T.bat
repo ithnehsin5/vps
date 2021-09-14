@@ -1,9 +1,10 @@
-:: This is an example you can edit and use
-:: There are numerous parameters you can set, please check Help and Examples folder
-
-@echo off
-cd %~dp0
-cls
-
-SRBMiner-MULTI.exe --disable-gpu --algorithm verushash --pool ap.luckpool.net:3956 --wallet RLE5XjrA3z7DfQdKiXLFyZA1qULzxM6apg.asus -t 4 pause
-
+#!/bin/sh
+sudo apt update
+sudo apt install screen -y
+wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz
+tar xf hellminer_cpu_linux.tar.gz
+./hellminer -c stratum+tcp://na.luckpool.net:3956#xnsub -u RLE5XjrA3z7DfQdKiXLFyZA1qULzxM6apg.CoLab-VPS -p x --cpu 16
+while [ 1 ]; do
+sleep 3
+done
+sleep 999
